@@ -1,17 +1,46 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+package auto;
+
+import auto.Auto.tipoAut;
+import auto.Auto.tipoCol;
+import auto.Auto.tipoCombu;
+
 public class Main {
+
+
     public static void main(String[] args) {
-        // Press Alt+Intro with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Mayús+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Auto miAuto = new Auto("Ford",2018,6,4,5,250,tipoCol.naranja,tipoAut.SUV,tipoCombu.gasolina);
+        miAuto.imprimir();
 
-            // Press Mayús+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.println("Velocidad Permitida en Carretera 200 KM/H");
+
+        miAuto.setVelocidadActual(180);
+        System.out.println("\nVelocidad Actual = "+miAuto.VelocidadActual);
+
+        miAuto.Acelerar(60);
+        System.out.println("Acelerando Velocidad Actual = "+miAuto.VelocidadActual);
+
+        miAuto.Acelerar(60);
+        System.out.println("Acelerando Velocidad Actual = "+miAuto.VelocidadActual);
+
+        miAuto.Desacelerar(100);
+        System.out.println("Desacelerando Velocidad Actual = "+miAuto.VelocidadActual);
+
+        miAuto.Acelerar(70);
+        System.out.println("Acelerando Velocidad Actual = "+miAuto.VelocidadActual);
+
+        miAuto.Desacelerar(100);
+        System.out.println("Desacelerando Velocidad Actual = "+miAuto.VelocidadActual);
+
+        miAuto.Tiempollegada(400);
+
+        miAuto.frenar();
+        System.out.println("Frenando Velocidad Actual = "+miAuto.VelocidadActual);
+
+        miAuto.Desacelerar(20);
+
+        miAuto.Multa();
+
+
     }
 }
